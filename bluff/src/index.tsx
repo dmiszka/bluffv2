@@ -14,6 +14,7 @@ root.render(
     <App />
     <Main />
     <Players />
+    
   </React.StrictMode>
 );
 reportWebVitals();

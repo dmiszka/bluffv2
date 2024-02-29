@@ -6,14 +6,6 @@ import Players from './Players';
 const App: React.FC = () => {
   return (
     <Router>
-      {/* <nav>
-      <li>
-      <Link to="/Players">Players</Link>
-      </li>
-      <li>
-      <Link to="/Main">Main</Link>
-      </li>
-      </nav> */}
       <Routes>
         <Route path="/" element={<Main />} />
         <Route path="/" element={<Players />} />

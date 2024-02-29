@@ -5,7 +5,6 @@ const Main: React.FC = () => {
   return (
     <div>
     <table className='tablica'>
-      {/* <h1>BLUFF</h1> */}
       <tbody>
         <tr className='gorny'>
           <td><p>11</p></td>
