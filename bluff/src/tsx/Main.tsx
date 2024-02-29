@@ -1,11 +1,9 @@
 import React, { useState } from 'react';
 import '../css/Main.css';
-import { Link } from 'react-router-dom';
 
 const Main: React.FC = () => {
   return (
     <div>
-      <Link to="/Players">players</Link>
     <table className='tablica'>
       {/* <h1>BLUFF</h1> */}
       <tbody>

@@ -1,13 +1,21 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import Main from './Main';
 import Players from './Players';
 
 const App: React.FC = () => {
   return (
     <Router>
+      {/* <nav>
+      <li>
+      <Link to="/Players">Players</Link>
+      </li>
+      <li>
+      <Link to="/Main">Main</Link>
+      </li>
+      </nav> */}
       <Routes>
-        <Route path="/Main" element={<Main />} />
+        <Route path="/" element={<Main />} />
         <Route path="/" element={<Players />} />
       </Routes>
     </Router>
