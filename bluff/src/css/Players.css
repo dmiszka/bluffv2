@@ -40,6 +40,13 @@ h2{
     box-shadow: 2px 2px 15px white;
 } */
 
+.btn-bg{
+    position: absolute;
+    margin-top: 200px;
+    font-size: 25px;
+}
+
+
 :root {
     --clr-neon: hsl(317, 32%, 89%);
     --clr-bg: hsl(323 21% 16%);

@@ -1,4 +1,7 @@
 body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-family: Arial, Helvetica, sans-serif;
     background-image: url("../../public/bg2.jpg");
     background-repeat: no-repeat;
@@ -9,14 +12,60 @@ body{
 
 .tablica{
     display: flex;
-    margin-top: 100px;
     justify-content: center;
+    margin-top: 100px;
     border-collapse: collapse;
     border-spacing: 0;
     color: white;
     font-size: 20px;
     text-shadow: 2px 2px 2px black;
 }
+
+h1 {
+    margin-bottom: 20px;
+    color: white;
+  }
+
+.btn-bg{
+    margin-bottom: -1000px;
+}
+
+.board{
+    position: relative;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+  
+  .dice-container {
+    width: 500px;
+    background-color: salmon;
+    display: flex;
+    justify-content: center;
+  }
+  
+
+  .App{
+    text-align: center;
+
+  }
+  .die {
+    width: 80px;
+    height: 80px;
+    margin: 10px;
+    border: 2px solid #333;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .die:hover {
+    background-color: #f0f0f0;
+  }
 
 td{
     position: relative;
