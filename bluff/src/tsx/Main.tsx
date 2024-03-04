@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import '../css/Main.css';
 
 type DieState = {
@@ -15,13 +15,14 @@ const Die: React.FC<{ value: number }> = ({ value }) => {
 
 
 const Main: React.FC = () => {
-  const [diceValues, setDiceValues] = useState<number[]>([1, 1, 1, 1, 1]);
+  const [diceValues, setDiceValues] = useState<number[]>();
 
   const rollDice = () => {
     const newDiceValues = Array.from({ length: 5 }, () => Math.floor(Math.random() * 6) + 1);
     setDiceValues(newDiceValues);
   };
 
+  
   return (
     <div className='board'>
 
@@ -116,13 +117,15 @@ const Main: React.FC = () => {
 
         </tbody>
       </table>
+      <button onClick={rollDice} className='btn-bg'>Rzuć kostkami</button>
       <h1>Rzut pięcioma kostkami</h1>
       <div className="dice-container">
-        {diceValues.map((value, index) => (
+        {diceValues && diceValues.map((value, index) => (
           <Die key={index} value={value} />
         ))}
       </div>
-      <button onClick={rollDice} className='btn-bg'>Rzuć kostkami</button>
+      {/* <img src="k1.png" alt="" /> */}
+
     </div>
   );
 };

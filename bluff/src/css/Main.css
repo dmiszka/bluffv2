@@ -27,7 +27,8 @@ h1 {
   }
 
 .btn-bg{
-    margin-bottom: -1000px;
+    margin-bottom: -678px;
+    right: 270px;
 }
 
 .board{
@@ -39,7 +40,7 @@ h1 {
   
   .dice-container {
     width: 500px;
-    background-color: salmon;
+
     display: flex;
     justify-content: center;
   }
@@ -53,18 +54,18 @@ h1 {
     width: 80px;
     height: 80px;
     margin: 10px;
+    background-color: salmon;
     border: 2px solid #333;
     border-radius: 8px;
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 24px;
-    cursor: pointer;
     transition: all 0.3s ease;
   }
   
   .die:hover {
-    background-color: #f0f0f0;
+    background-color: sandybrown;
   }
 
 td{
@@ -92,8 +93,7 @@ td{
 img{
     width: 65px;
     height: 65px;
-    /* margin-top: 65px;
-    margin-right: 65px; */
+
 }
 
 p{
