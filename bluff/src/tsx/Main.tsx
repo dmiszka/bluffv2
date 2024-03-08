@@ -15,18 +15,34 @@ const Die: React.FC<{ value: number }> = ({ value }) => {
 
 
 const Main: React.FC = () => {
-  const [diceValues, setDiceValues] = useState<number[]>();
+  const [diceValues, setDiceValues] = useState<number[]>([]);
+  const [currentPlayer, setCurrentPlayer] = useState<Number>(1);
+  const [currentBid, setCurrentBid] = useState<{ quantity: number, value: number }>({ quantity: 0, value: 0 });
 
   const rollDice = () => {
     const newDiceValues = Array.from({ length: 5 }, () => Math.floor(Math.random() * 6) + 1);
     setDiceValues(newDiceValues);
   };
 
-  
+  const handleBid = (quantity: number, value: number) => {
+    setCurrentBid({ quantity, value });
+    //moze kiedys tu bedzie logika przekazujaca licytacje do nastepnego gracza 
+  }
+
+  const handleChallenge = () => {
+    const dieCount = diceValues.filter(die => die === currentBid.value || die === 1).length;
+    if (dieCount + diceValues?.filter(die => die === 1).length >= currentBid.quantity) {
+      console.log("licytujacy wygrywa")
+    } else {
+      console.log("Wyzwany wygrywa");
+    }
+    setCurrentPlayer(currentPlayer === 1 ? 2 : 1);
+  }
+
   return (
     <div className='board'>
 
-      
+
 
       <table className='tablica'>
         <tbody>
@@ -117,14 +133,18 @@ const Main: React.FC = () => {
 
         </tbody>
       </table>
-      <button onClick={rollDice} className='btn-bg'>Rzuć kostkami</button>
-      <h1>Rzut pięcioma kostkami</h1>
+
       <div className="dice-container">
+        <button onClick={rollDice} className='btn-bg'>Rzuć kostkami</button>
         {diceValues && diceValues.map((value, index) => (
+
           <Die key={index} value={value} />
         ))}
+        {currentPlayer === 1 && <button onClick={() => handleBid(1, 1)} className='bid'>Bid</button>}
+        {currentPlayer === 2 && <button onClick={handleChallenge} className='challenge'>Challenge</button>}
       </div>
-      {/* <img src="k1.png" alt="" /> */}
+
+
 
     </div>
   );

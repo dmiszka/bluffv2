@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        canvas {
+            border: 1px solid black;
+            display: block;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="mapa" width="200" height="200"></canvas>
+    <script>
+        const canvas = document.getElementById('mapa');
+        const ctx = canvas.getContext('2d');
+        const tileSize = 20;
+        const mapSize = 10;
+        const playerSize = 20;
+        let playerX = Math.floor(mapSize / 2);
+        let playerY = Math.floor(mapSize / 2);
+
+        function drawPlayer() {
+            ctx.fillStyle = 'blue';
+            ctx.fillRect(playerX * tileSize, playerY * tileSize, playerSize, playerSize);
+        }
+
+        function drawMap() {
+            ctx.fillStyle = 'lightgray';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+        }
+
+        function movePlayer(keyCode) {
+            switch (keyCode) {
+                case 87:
+                    if (playerY > 0)
+                        playerY--;
+                    break;
+                case 83:
+                    if (playerY < mapSize - 1)
+                        playerY++;
+                    break;
+                case 65:
+                        if (playerX > 0)
+                            playerX--;
+                    break;
+                case 68:
+                    if (playerX < mapSize - 1)
+                        playerX++;
+                    break;
+            }
+            drawMap();
+            drawPlayer();
+        }
+
+        window.addEventListener('keydown', function (event) {
+            movePlayer(event.keyCode);
+        });
+
+        function init() {
+            drawMap();
+            drawPlayer();
+        }
+
+        init();
+    </script>
+</body>
+
+</html>

@@ -17,7 +17,6 @@ const Players: React.FC = () => {
     }
     return (
         <div>
-            
             <div className='kontener'>
                 <h1>Wybierz ilość graczy!</h1>
                 <h2>{rangeValue}</h2>

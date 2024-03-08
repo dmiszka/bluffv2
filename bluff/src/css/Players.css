@@ -25,6 +25,7 @@
     transition: opacity .2s;
 }
 
+
 .slider:hover {
     opacity: 1;
 }
