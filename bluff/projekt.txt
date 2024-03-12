@@ -1,0 +1,24 @@
+Zadanie 
+Utworzyć aplikację do gry Blef. Aplikacja ma się składać z 3 modułów: 
+Silnik gry 
+Moduł AI 
+Aplikacja Web 
+Struktura projektu 
+Proszę o wykorzystanie workspaces (https://docs.npmjs.com/cli/v10/using-npm/workspaces) w celu podzielenia aplikacji na moduły.  
+ 
+Moduł 1) Silnik Gry 
+- Na potrzeby silnika przyjmijmy uproszczone zasady gry: 
+
+- Ilość graczy 2-6 definiowana na początku gry 
+
+- Każdy gracz zaczyna z 5 kostkami k6 
+
+- Początek rundy: każdy gracz rzuca wszystkimi posiadanymi kostkami (wyniki nie są widoczne dla innych graczy) 
+	Gracze kolejno wykonują jedną z 2 akcji: 
+		Bid – deklaruje na ilu kostkach wypadła dana ilość oczek; 1 oczko to joker – nie można go wybrać; Porównując do licytacji poprzedniego gracza można wybrać kostkę z tą samą liczbą oczek, ale licytować większą ich ilość, lub 		kostkę o większej liczby oczek z dowolną liczbą. 
+
+		Challenge – gracz sprawdza poprzednią licytację. Sumowana jest liczba kostek, na których wypadła licytowana liczba. Do tej liczby dodawana jest liczba jedynek. Wygrywa gracz licytujący jeżeli suma jest większa niż liczba, 		którą licytowana. Wygrywa gracz sprawdzający, jeżeli suma jest niższa niż ostatnio licytowana liczba. Jeżeli obie liczby są równe obaj gracze wygrywają. Gracz, który przegrał traci jedną kostkę. 
+
+- Runda kończy się po wykonaniu akcji challenge. Jeżeli w grze pozostało co najmniej 2 graczy, zaczyna się kolejna runda. 
+
+- Gracz, który stracił wszystkie kostki jest eliminowany. Wygrywa ostatni gracz, który pozostaje w grze. 

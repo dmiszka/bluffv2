@@ -18,7 +18,7 @@ const Main: React.FC = () => {
   const [diceValues, setDiceValues] = useState<number[]>([]);
   const [currentPlayer, setCurrentPlayer] = useState<Number>(1);
   const [currentBid, setCurrentBid] = useState<{ quantity: number, value: number }>({ quantity: 0, value: 0 });
-
+  
   const rollDice = () => {
     const newDiceValues = Array.from({ length: 5 }, () => Math.floor(Math.random() * 6) + 1);
     setDiceValues(newDiceValues);
@@ -143,9 +143,6 @@ const Main: React.FC = () => {
         {currentPlayer === 1 && <button onClick={() => handleBid(1, 1)} className='bid'>Bid</button>}
         {currentPlayer === 2 && <button onClick={handleChallenge} className='challenge'>Challenge</button>}
       </div>
-
-
-
     </div>
   );
 };
