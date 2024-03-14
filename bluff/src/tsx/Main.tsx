@@ -26,7 +26,7 @@ const Main: React.FC = () => {
 
   const handleBid = (quantity: number, value: number) => {
     setCurrentBid({ quantity, value });
-    //moze kiedys tu bedzie logika przekazujaca licytacje do nastepnego gracza 
+
   }
 
   const handleChallenge = () => {
